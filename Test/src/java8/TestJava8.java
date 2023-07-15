@@ -93,7 +93,7 @@ public class TestJava8 {
 
         System.out.println(outputMap);*/
 
-        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        /*List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
         Map<Boolean, List<Integer>> partitions = numbers.stream()
                 .collect(Collectors.partitioningBy(n -> n % 2 == 0));
@@ -103,7 +103,20 @@ public class TestJava8 {
         List<Integer> oddNumbers = partitions.get(false);
 
         System.out.println("Even numbers: " + evenNumbers);
-        System.out.println("Odd numbers: " + oddNumbers);
+        System.out.println("Odd numbers: " + oddNumbers);*/
+
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        Map<Boolean, List<Integer>> oddEvenMap = Arrays.stream(numbers)
+                .boxed()
+                .collect(Collectors.partitioningBy(number -> number % 2 == 1));
+
+        Map<Integer, List<Integer>> resultMap = oddEvenMap.entrySet().stream()
+                .collect(Collectors.toMap(
+                        entry -> entry.getKey() ? entry.getValue().get(0) : null,
+                        entry -> entry.getKey() ? null : entry.getValue()));
+
+        System.out.println(resultMap);
 
     }
 
