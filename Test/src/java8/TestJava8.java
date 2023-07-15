@@ -105,8 +105,6 @@ public class TestJava8 {
         System.out.println("Even numbers: " + evenNumbers);
         System.out.println("Odd numbers: " + oddNumbers);
 
-
-
     }
 
 
