@@ -107,7 +107,7 @@ public class TestJava8 {
 
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-        Map<Boolean, List<Integer>> oddEvenMap = Arrays.stream(numbers)
+       /* Map<Boolean, List<Integer>> oddEvenMap = Arrays.stream(numbers)
                 .boxed()
                 .collect(Collectors.partitioningBy(number -> number % 2 == 1));
 
@@ -117,7 +117,8 @@ public class TestJava8 {
                         entry -> entry.getKey() ? null : entry.getValue()));
 
         System.out.println(resultMap);
-
+*/
+        System.out.println("Ram");
     }
 
 
